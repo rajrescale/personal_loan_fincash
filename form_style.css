@@ -1,0 +1,773 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* header start */
+
+.nav-container {
+    background-color: #cff1ff;
+}
+
+.nav {
+    width: 200px;
+    /* background-color: #4eadd2; */
+}
+
+.nav img {
+    width: 70%;
+}
+
+
+/* tablet device */
+@media (min-width:500px) and (max-width:890px) {
+
+    .nav img {
+        width: 70%;
+    }
+}
+
+
+/* mobile device */
+@media (min-width:300px) and (max-width:490px) {
+
+    .nav img {
+        width: 50%;
+    }
+}
+
+/* header end */
+
+/* hero section start */
+
+.hero-section {
+    /* background-color: #002b50; */
+    background: linear-gradient(-180deg, #002b50, #4592c2);
+    color: #ffffff;
+}
+
+.hero-heading {
+    padding: 40px 0;
+    padding-bottom: 100px;
+}
+
+
+/* small laptop device */
+@media (min-width:900px) and (max-width:1200px) {}
+
+
+/* tablet device */
+@media (min-width:490px) and (max-width:786px) {
+    .hero-heading {
+        padding: 20px 0;
+        padding-bottom: 80px;
+    }
+
+    .hero-heading h2 {
+        font-size: 22px;
+    }
+
+    .hero-heading p {
+        font-size: 14px;
+    }
+}
+
+@media (min-width:500px) and (max-width:767px) {
+
+    .form-heading-container {
+        flex-direction: column;
+    }
+
+}
+
+
+/* mobile device */
+@media (min-width:300px) and (max-width:490px) {
+    .hero-heading {
+        padding: 20px 0;
+        padding-bottom: 80px;
+    }
+
+    .hero-heading h2 {
+        font-size: 22px;
+    }
+
+    .hero-heading p {
+        font-size: 14px;
+    }
+
+}
+
+/* hero section end */
+
+
+.form-heading-container {
+    margin-top: -100px;
+    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.2));
+}
+
+
+.form-section {
+    /* width: 80%; */
+    padding: 0 40px;
+    padding-bottom: 25px;
+    border-radius: 20px;
+}
+
+.apply-step {
+    min-width: 300px;
+    font-size: 13px;
+    font-weight: 700;
+    position: absolute;
+    text-align: center;
+    top: -20px;
+    background-color: #addea8;
+    padding-top: 7px;
+    border-radius: 1px 1px 20px 20px;
+    /* z-index: 99999; */
+}
+
+.apply-step::after {
+    position: absolute;
+    content: "";
+    width: 22px;
+    height: 20px;
+    background-color: #027000;
+    top: 0;
+    left: -21px;
+    clip-path: polygon(100% 0%, 0% 100%, 100% 100%);
+    /* z-index: -1; */
+}
+
+.apply-step::before {
+    position: absolute;
+    content: "";
+    width: 22px;
+    height: 20px;
+    background-color: #027000;
+    top: 0;
+    right: -21px;
+    clip-path: polygon(0% 0%, 0% 100%, 100% 100%);
+    /* z-index: -1; */
+}
+
+
+
+/* Progressbar */
+
+
+.progressbar {
+    padding: 0 20px;
+    /* min-width: 300px; */
+    width: 650px;
+    /* background-color: #4749ca; */
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    /* gap: 35px; */
+    counter-reset: step;
+    margin: 30px 0 60px;
+}
+
+.progressbar::after,
+.progress {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 13%;
+    transform: translateY(-50%);
+    /* height: 2px; */
+    width: 30%;
+    border-bottom: 2px dashed rgba(0, 43, 80, 0.3);
+    /* background-color: #949494; */
+    z-index: 1;
+}
+
+.progressbar::before,
+.progress {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 13%;
+    transform: translateY(-50%);
+    /* height: 2px; */
+    width: 30%;
+    border-bottom: 2px dashed rgba(0, 43, 80, 0.3);
+    /* background-color: #949494; */
+    z-index: 1;
+}
+
+.progress {
+    background-color: #000;
+    width: 0%;
+    transition: 0.3s;
+}
+
+.progress-step {
+    width: 50px;
+    height: 50px;
+    background-color: #b9f0ff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .2s;
+}
+
+.progress-step svg {
+    z-index: 99999;
+}
+
+.progress-step::before {
+    counter-increment: step;
+    /* content: counter(step); */
+}
+
+.progress-step::after {
+    content: attr(data-title);
+    position: absolute;
+    text-align: center;
+    top: calc(100% + 10px);
+    font-size: 12px;
+    color: #666;
+}
+
+.progress-step-active {
+    background-color: #002b50;
+    color: #f3f3f3;
+}
+
+.progress-step-active svg path {
+    /* fill: #ffffff; */
+    stroke: #ffffff;
+    stroke-width: 1px;
+
+}
+
+
+/* small laptop device */
+@media (min-width:900px) and (max-width:1200px) {
+
+    .progressbar::after {
+        left: 17%;
+        width: 25%;
+    }
+
+    .progressbar::before {
+        right: 17%;
+        width: 25%;
+    }
+}
+
+
+/* tablet device */
+@media (min-width:768px) and (max-width:890px) {
+
+    .progressbar::after {
+        left: 15%;
+        width: 25%;
+    }
+
+    .progressbar::before {
+        right: 15%;
+        width: 25%;
+    }
+}
+
+
+@media (min-width:500px) and (max-width:767px) {
+
+    .progressbar::after {
+        left: 30%;
+        width: 6%;
+    }
+
+    .progressbar::before {
+        right: 30%;
+        width: 6%;
+    }
+}
+
+
+/* mobile device */
+@media (min-width:300px) and (max-width:490px) {
+
+    .progressbar::after {
+        left: 30%;
+        width: 6%;
+    }
+
+    .progressbar::before {
+        right: 30%;
+        width: 6%;
+    }
+}
+
+
+/* Form Section Start */
+
+.form-section {
+    min-width: 300px;
+    background-color: #ffffff;
+}
+
+.first-form-container,
+.second-form-container {
+    background-color: #FAFAFA;
+}
+
+form {
+    flex-wrap: wrap;
+    /* padding: 0 100px; */
+    /* background-color: #F1F6FF; */
+}
+
+.form-step {
+    display: none;
+    transform-origin: top;
+    animation: animate 0.5s;
+}
+
+.form-step-active {
+    display: block;
+}
+
+
+.input-box {
+    position: relative;
+    margin: 15px;
+}
+.genrateotpbtn{
+    position: absolute;
+    right: 12px;
+    top: 13px;
+    background-color: #b9f0ff;
+    padding: 5px 14px;
+    border-radius: 7px;
+    border: none;
+}
+.genrateotpbtn i{
+    font-size: 15px;
+    color: #1e1e1e;
+}
+.gender{
+    
+    padding: 3px 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.input-box label{
+    position: absolute;
+    top: -11px;
+    left: 30px;
+    padding: 3px 10px;
+    font-size: 14px;
+    font-weight: 500;
+    /* text-shadow: 1px 1px 5px rgb(0, 30, 255, 0.3); */
+    background-color: #ffffff;
+}
+
+.input-box input,
+.input-box select {
+    width: 350px;
+    padding: 14px 15px;
+    margin: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid #738cba;
+    /* filter: drop-shadow(1px 1px 2px rgb(0, 30, 255, 0.3)); */
+}
+
+
+.input-box .otpbtn {
+
+    margin-bottom: 10px;
+    padding: 7px 10px;
+    font-size: 17px;
+    font-weight: 500;
+    /* background: rgb(212, 212, 212); */
+    border: none;
+    border-radius: 5px;
+    /* appearance: none; */
+    outline: none;
+    transition: .5s;
+    background-color: #235d80;
+    color: #ffffff;
+    border: 2px solid #235d80;
+
+}
+
+.input-box .otpbtn:hover {
+    background-color: #ffffff;
+    color: #235d80;
+    border: 2px solid #235d80;
+}
+
+#submitotpbtn{
+    text-align: center;
+    width:150px;
+    padding: 5px 15px;
+    font-size: 17px;
+    margin-left: 20px;
+}
+
+
+/* privacy-box  */
+.privacy-box {
+    flex-direction: column;
+}
+
+.input-checkbox {
+    display: flex;
+}
+
+.input-checkbox input {
+    width: 12px;
+    margin-top: -15px;
+    border-radius: 2px;
+}
+
+.input-checkbox p {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.input-checkbox p a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #000;
+}
+
+.security-text {
+    display: flex;
+    gap: 5px;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.security-text p {
+    font-size: 12px;
+    font-weight: bold;
+
+
+}
+
+
+/* small laptop device */
+@media (min-width:900px) and (max-width:1200px) {
+
+
+    .input-box input {
+        width: 350px;
+    }
+}
+
+
+/* tablet device */
+@media (min-width:768px) and (max-width:890px) {
+
+    .input-box input {
+        width: 270px;
+    }
+
+    .input-box {
+        margin: 10px;
+    }
+}
+
+@media (min-width:500px) and (max-width:767px) {
+    .form-section {
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .personal-details {
+        flex-direction: column;
+    }
+}
+
+
+/* mobile device */
+@media (min-width:300px) and (max-width:767px) {
+
+    .apply-step {
+        min-width: 220px;
+        font-size: 12px;
+    }
+
+    .progressbar {
+        width: 300px;
+    }
+
+    .form-section {
+        padding: 0;
+    }
+
+    .input-box input {
+        width: 270px;
+    }
+
+    form {
+        padding: 0px;
+    }
+
+    .privacy-box {
+        padding: 0 20px;
+    }
+
+    .input-checkbox input {
+        margin-top: -35px;
+    }
+
+    .input-checkbox:nth-child(2) p {
+        font-size: 9px;
+    }
+
+    .Security {
+        flex-direction: column;
+        align-items: start;
+        padding: 10px 20px;
+    }
+}
+
+
+/* Form Section End */
+
+
+
+/* Employment section start */
+
+.Employemnt-boxs {
+    position: relative;
+    width: 220px;
+    height: 120px;
+    border-radius: 8px;
+    padding: 7px 10px;
+    border: 1px solid #aeaeae;
+    /* transition: .3s; */
+    cursor: pointer;
+}
+
+/* 
+.Employemnt-boxs.color {
+    color: red;
+} */
+
+.salaried:hover {
+    background-color: rgb(255, 248, 225, 0.3);
+}
+
+.self-employed:hover {
+    background-color: rgb(225, 255, 230, 0.3);
+}
+
+.business:hover {
+    background-color: rgb(233, 240, 255, 0.3);
+}
+
+.salaried-text h6 {
+    margin: 0;
+}
+
+.salaried-text p {
+    font-size: 14px;
+    color: #444444;
+}
+
+.Employemnt-img {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+/* 
+.Employemnt-container {
+    flex-direction: column;
+} */
+
+/* small laptop device */
+@media (min-width:900px) and (max-width:1200px) {
+    .form-section {
+        width: 100%;
+    }
+
+    .Employemnt-boxs {
+        width: 190px;
+    }
+}
+
+
+/* tablet device */
+@media (min-width:500px) and (max-width:890px) {
+
+    .Employemnt-boxs {
+        width: 160px;
+        height: 100px;
+    }
+
+    .Employment input {
+        width: 250px;
+    }
+
+    .salaried-text h6 {
+        font-size: 15px;
+    }
+
+    .salaried-text p {
+        font-size: 12px;
+    }
+
+    .Employment label {
+        font-size: 12px;
+    }
+}
+
+/* mobile device */
+@media (min-width:300px) and (max-width:767px) {
+    .Employemnt-boxs {
+        /* width: 160px; */
+        height: 90px;
+    }
+
+    .Employemnt-container,
+    .Employment {
+        flex-direction: column;
+    }
+
+}
+
+/* Employment section end */
+/* personal details section Start  */
+
+.personal-details {
+    width: 96%;
+    flex-wrap: wrap;
+}
+
+.personal-details input {
+    width: 300px;
+}
+
+.personal-details label {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.personal-details .radio-box {
+    width: 100px;
+    margin-left: 0px;
+}
+
+
+/* small laptop device */
+@media (min-width:1200px) and (max-width:1400px) {
+    .personal-details {
+        width: 100%;
+    }
+
+    .personal-details input {
+        width: 280px;
+    }
+
+    .personal-details label {
+        font-size: 12px;
+        font-weight: 500;
+    }
+}
+
+@media (min-width:1020px) and (max-width:1200px) {
+    .personal-details {
+        width: 100%;
+    }
+
+    .personal-details input {
+        width: 220px;
+    }
+
+    .personal-details label {
+        font-size: 12px;
+        font-weight: 500;
+    }
+}
+
+
+/* tablet device */
+@media (min-width:500px) and (max-width:1020px) {
+
+    .personal-details {
+        width: 100%;
+    }
+
+    .personal-details input {
+        width: 270px;
+    }
+
+    .personal-details label {
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+}
+
+
+@media (min-width:500px) and (max-width:767px) {}
+
+
+/* mobile device */
+@media (min-width:300px) and (max-width:767px) {
+    .radio-box {
+        padding: 10px 20px;
+    }
+
+}
+
+
+/* personal details section End  */
+
+
+
+.thanks-container {
+    width: 350px;
+    position: relative;
+    /* background-color: #e3ffec; */
+    /* padding: 30px 10px; */
+    border-radius: 10px;
+    /* filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.3)); */
+}
+
+.thanks-container h1 {
+    /* margin-top: -20px; */
+    margin-bottom: 10px;
+}
+
+.thanks-container p {
+    margin-bottom: 40px;
+}
+
+.thanks-container img {
+    /* margin-top: -50px; */
+    left: 40px;
+    width: 50%;
+}
+
+/* mobile device */
+@media (min-width:300px) and (max-width:490px) {
+
+
+    .thanks-container {
+        width: 250px;
+    }
+}
+
+
+
+
+
+footer {
+    background-color: #235d80;
+}
